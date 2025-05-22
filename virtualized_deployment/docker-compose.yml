@@ -1,0 +1,66 @@
+version: "3.8"
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    networks:
+      custom_net:
+        ipv4_address: 172.28.0.2
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+
+  cloud_app:
+    image: cloud_node_app:latest
+    networks:
+      custom_net:
+        ipv4_address: 172.28.0.10
+    depends_on:
+      - rabbitmq
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
+    volumes:
+      - ../cache/cloud:/app/cache
+      - ../results:/app/results
+
+  fog_app_1:
+    image: fog_node_app:latest
+    networks:
+      custom_net:
+        ipv4_address: 172.28.0.11
+    volumes:
+      - ../cache/fog1:/app/cache
+    depends_on:
+      - rabbitmq
+
+  fog_app_2:
+    image: fog_node_app:latest
+    networks:
+      custom_net:
+        ipv4_address: 172.28.0.12
+    volumes:
+      - ../cache/fog2:/app/cache
+
+  edge_app_1:
+    image: edge_node_app:latest
+    networks:
+      custom_net:
+        ipv4_address: 172.28.0.21
+    volumes:
+      - ../cache/edge1:/app/cache
+
+  edge_app_2:
+    image: edge_node_app:latest
+    networks:
+      custom_net:
+        ipv4_address: 172.28.0.22
+    volumes:
+      - ../cache/edge2:/app/cache
+
+networks:
+  custom_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.28.0.0/16

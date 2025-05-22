@@ -1,0 +1,139 @@
+{
+  "nodes": [
+    {
+      "id": "96eeb9ae-84c8-40a2-a773-3940524057e1",
+      "type": "custom",
+      "position": {
+        "x": 485.84375,
+        "y": 93.703125
+      },
+      "data": {
+        "localId": "96eeb9ae-84c8-40a2-a773-3940524057e1",
+        "backedId": "",
+        "label": "Cloud Node",
+        "ip_address": "172.28.0.10",
+        "port": 8081,
+        "node_type": 1,
+        "flowchart_position": {
+          "x": 485.84375,
+          "y": 93.703125
+        },
+        "childrenIds": []
+      }
+    },
+    {
+      "id": "283b51a6-54e9-47f8-bedf-67fc3c233c79",
+      "type": "custom",
+      "position": {
+        "x": 312.0808036568626,
+        "y": 344.96542303984904
+      },
+      "data": {
+        "localId": "283b51a6-54e9-47f8-bedf-67fc3c233c79",
+        "backedId": "",
+        "label": "Fog Node",
+        "ip_address": "172.28.0.11",
+        "port": 8081,
+        "node_type": 2,
+        "flowchart_position": {
+          "x": 312.0808036568626,
+          "y": 344.96542303984904
+        },
+        "childrenIds": []
+      }
+    },
+    {
+      "id": "66a835a6-fc40-4386-9e4e-110010470930",
+      "type": "custom",
+      "position": {
+        "x": 651.4354765175525,
+        "y": 352.0447866872237
+      },
+      "data": {
+        "localId": "66a835a6-fc40-4386-9e4e-110010470930",
+        "backedId": "",
+        "label": "Fog Node",
+        "ip_address": "172.28.0.12",
+        "port": 8081,
+        "node_type": 2,
+        "flowchart_position": {
+          "x": 651.4354765175525,
+          "y": 352.0447866872237
+        },
+        "childrenIds": []
+      }
+    },
+    {
+      "id": "5ab1b4e3-ef4c-46c4-964f-3db7d67b49fc",
+      "type": "custom",
+      "position": {
+        "x": 208.41418494324512,
+        "y": 589.1053450041671
+      },
+      "data": {
+        "localId": "5ab1b4e3-ef4c-46c4-964f-3db7d67b49fc",
+        "backedId": "",
+        "label": "Edge Node",
+        "ip_address": "172.28.0.21",
+        "port": 8081,
+        "node_type": 3,
+        "flowchart_position": {
+          "x": 208.41418494324512,
+          "y": 589.1053450041671
+        },
+        "childrenIds": []
+      }
+    },
+    {
+      "id": "7c67aecb-958b-4359-869a-c81b9d57c7f1",
+      "type": "custom",
+      "position": {
+        "x": 662.827838430703,
+        "y": 603.2303033213602
+      },
+      "data": {
+        "localId": "7c67aecb-958b-4359-869a-c81b9d57c7f1",
+        "backedId": "",
+        "label": "Edge Node",
+        "ip_address": "172.28.0.22",
+        "port": 8081,
+        "node_type": 3,
+        "flowchart_position": {
+          "x": 662.827838430703,
+          "y": 603.2303033213602
+        },
+        "childrenIds": []
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "283b51a6-54e9-47f8-bedf-67fc3c233c79",
+      "sourceHandle": null,
+      "target": "5ab1b4e3-ef4c-46c4-964f-3db7d67b49fc",
+      "targetHandle": null,
+      "id": "reactflow__edge-283b51a6-54e9-47f8-bedf-67fc3c233c79-5ab1b4e3-ef4c-46c4-964f-3db7d67b49fc"
+    },
+    {
+      "source": "66a835a6-fc40-4386-9e4e-110010470930",
+      "sourceHandle": null,
+      "target": "7c67aecb-958b-4359-869a-c81b9d57c7f1",
+      "targetHandle": null,
+      "id": "reactflow__edge-66a835a6-fc40-4386-9e4e-110010470930-7c67aecb-958b-4359-869a-c81b9d57c7f1"
+    },
+    {
+      "source": "96eeb9ae-84c8-40a2-a773-3940524057e1",
+      "sourceHandle": null,
+      "target": "283b51a6-54e9-47f8-bedf-67fc3c233c79",
+      "targetHandle": null,
+      "id": "reactflow__edge-96eeb9ae-84c8-40a2-a773-3940524057e1-283b51a6-54e9-47f8-bedf-67fc3c233c79"
+    },
+    {
+      "source": "96eeb9ae-84c8-40a2-a773-3940524057e1",
+      "sourceHandle": null,
+      "target": "66a835a6-fc40-4386-9e4e-110010470930",
+      "targetHandle": null,
+      "id": "reactflow__edge-96eeb9ae-84c8-40a2-a773-3940524057e1-66a835a6-fc40-4386-9e4e-110010470930"
+    }
+  ]
+}
